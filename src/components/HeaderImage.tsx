@@ -11,7 +11,7 @@ const HeaderImage = () => {
         />
         <div className="z-10 text-white font-sans space-y-4">
             <h1 className="text-4xl font-medium tracking-widest">Bisal Ahmad</h1>
-            <p className="text-lg opacity-80">It's me "Bisal"!, how are you doing!</p>
+            <p className="text-lg opacity-80">It&apos;s me &quot;Bisal&quot; !, how are you doing!</p>
 
         </div>
     </div>)
