@@ -1,18 +1,24 @@
-import React from 'react'
+import React from 'react';
+import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuLink } from "@/components/ui/navigation-menu";
+import Link from 'next/link';
+import navigationLinks from "@/constants/nav-links";
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
     return (
-        <nav className="w-100 flex justify-between items-center border px-24 my-4">
-            <h1 className="text-3xl">BISAL AHMAD</h1>
-            <ul className="flex items-center gap-4">
-               <li className="text-lg">HOME</li>
-               <li className="text-lg">PORTFOLIO</li>
-               <li className="text-lg">BLOG</li>
-               <li className="text-lg">CONTACT</li>
-               <li className="text-lg">LOG IN</li>
-            </ul>
-
-        </nav>
-    )
+        <NavigationMenu>
+            <NavigationMenuList className="gap-4">
+                {navigationLinks.map(({ id, label, href }) => (
+                    <NavigationMenuItem key={id}>
+                        <Link href={href} legacyBehavior  passHref>
+                            <NavigationMenuLink className="bg-transparent hover:text-sky-500">
+                                {label}
+                            </NavigationMenuLink>
+                        </Link>
+                    </NavigationMenuItem>
+                ))}
+            </NavigationMenuList>
+        </NavigationMenu>
+    );
 }
-export default Navbar
+
+export default Navbar;
