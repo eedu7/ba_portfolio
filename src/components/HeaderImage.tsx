@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 import BackgroundImage from "../../public/images/header_background.jpg";
 import Image from "next/image";
