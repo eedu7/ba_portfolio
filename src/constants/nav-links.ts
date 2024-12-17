@@ -9,7 +9,7 @@ const navigationLinks: NavigationLink[] = [
     {
         id: 1,
         label: 'Home',
-        href: '/',
+        href: '/home',
     },
     {
         id: 2,
