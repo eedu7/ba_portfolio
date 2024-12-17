@@ -1,10 +1,19 @@
+'use client';
+
 import * as React from 'react';
 
 const useMediaQuery = (query: string) => {
-    const [matches, setMatches] = React.useState<boolean>(() => matchMedia(query).matches);
+    const [matches, setMatches] = React.useState<boolean>(() => {
+        if (typeof window !== 'undefined' && window.matchMedia) {
+            return window.matchMedia(query).matches;
+        }
+        return false;
+    });
 
     React.useEffect(() => {
-        const mediaQueryList = matchMedia(query);
+        if (typeof window === 'undefined' || !window.matchMedia) return;
+
+        const mediaQueryList = window.matchMedia(query);
 
         const onChange = (event: MediaQueryListEvent) => {
             setMatches(event.matches);
