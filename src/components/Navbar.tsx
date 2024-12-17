@@ -7,7 +7,7 @@ import Link from 'next/link';
 import navigationLinks from "@/constants/nav-links";
 import {usePathname} from "next/navigation";
 import {
-    Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle, DrawerTrigger
+    Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger
 } from "@/components/ui/drawer";
 import useMediaQuery from "@/hooks/use-media-query";
 import {MenuIcon} from "lucide-react";
@@ -23,7 +23,6 @@ const Navbar: React.FC = () => {
                 {navigationLinks.map(({id, label, href}) => {
                     const isActive = pathname === href;
                     return (
-
                         <NavigationMenuItem key={id}>
                             <Link href={href} legacyBehavior passHref>
                                 <NavigationMenuLink
@@ -36,12 +35,30 @@ const Navbar: React.FC = () => {
                 })}
             </NavigationMenuList>
         </NavigationMenu> : <Drawer direction="top">
-            <DrawerTrigger><MenuIcon/></DrawerTrigger>
+            <DrawerTrigger><MenuIcon className="text-slate-400"/></DrawerTrigger>
             <DrawerContent>
                 <DrawerHeader>
-                    <DrawerTitle>Are you absolutely sure?</DrawerTitle>
-                    <DrawerDescription>This action cannot be undone.</DrawerDescription>
+                    <DrawerTitle className="hidden">Are you absolutely sure?</DrawerTitle>
                 </DrawerHeader>
+                <div>
+                    <NavigationMenu>
+                        <NavigationMenuList className="gap-8 flex flex-col">
+                            {navigationLinks.map(({id, label, href}) => {
+                                const isActive = pathname === href;
+                                return (
+                                    <NavigationMenuItem key={id} className="w-screen text-center">
+                                        <Link href={href} legacyBehavior passHref>
+                                            <NavigationMenuLink
+                                                className={`bg-transparent ${isActive ? 'border border-slate-600 hover:border-slate-600' : ''} p-3 text-black hover:text-gray-950 text-sm tracking-widest transition-all font-sans`}
+                                            >
+                                                {label}
+                                            </NavigationMenuLink>
+                                        </Link>
+                                    </NavigationMenuItem>)
+                            })}
+                        </NavigationMenuList>
+                    </NavigationMenu>
+                </div>
             </DrawerContent>
         </Drawer>}
 
