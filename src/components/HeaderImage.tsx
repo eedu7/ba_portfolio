@@ -4,7 +4,7 @@ import BackgroundImage from "../../public/images/header_background.jpg";
 import Image from "next/image";
 
 const HeaderImage = () => {
-    return (<div className="relative w-full h-[75vh] flex justify-center items-center">
+    return (<div className="relative w-full h-[66vh] flex justify-center items-center">
         <Image
             src={BackgroundImage}
             alt="BackgroundImage"
