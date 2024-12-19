@@ -10,10 +10,10 @@ export default function Home() {
         <main>
             <Introduction/>
             <Bio/>
-            {/*<Contact/>*/}
+            <Contact/>
         </main>
         <footer>
-            {/*<Copyrights/>*/}
+            <Copyrights/>
         </footer>
 
     </>);
