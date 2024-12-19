@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Montserrat } from "next/font/google";
+import { Geist, Geist_Mono, Montserrat, Abril_Fatface } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -17,6 +17,12 @@ const montserrat = Montserrat({
     subsets: ["latin"]
 })
 
+const abrilFatface = Abril_Fatface({
+    weight: ["400"],
+    variable: "--font-abril-fatface",
+    subsets: ["latin"]
+})
+
 export const metadata: Metadata = {
   title: "Bisal Ahmad",
   description: "A portfolio website of 'Bisal Ahmad'",
@@ -30,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${montserrat.className} antialiased bg-slate-50`}
+        className={`${geistSans.variable} ${geistMono.variable} ${montserrat.className} ${abrilFatface.variable} antialiased bg-slate-50`}
       >
         {children}
       </body>

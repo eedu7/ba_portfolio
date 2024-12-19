@@ -11,6 +11,7 @@ export default {
   	extend: {
 		  fontFamily: {
 			sans: ["Montserrat", "sans-serif"],
+			  abril_fatface: ["Abril Fatface", "sans-serif"],
 		  },
   		colors: {
   			background: 'hsl(var(--background))',
