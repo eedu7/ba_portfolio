@@ -8,7 +8,7 @@ const ContactPage = () => {
         <section className="my-4">
         <div className="w-full h-full max-w-screen-lg mx-auto md:grid grid-cols-3 gap-4 p-8">
             <div className="col-span-1">
-                <Image src={NezukoKamadoBioImage} alt="Profile Image" className="object-fit lg:md-h[280px] md:h-[210px] h-[385px]"/>
+                <Image src={NezukoKamadoBioImage} alt="Profile Image" className="md:object-fit object-cover lg:md-h[280px] md:h-[210px] h-[385px]"/>
             </div>
             <div className="col-span-2 space-y-6">
                 <h1 className="font-abril_fatface lg:text-[32px] md:text-[48px] text-[34px] text-black font-bold">I&apos;d be delighted to meet you 😄</h1>
