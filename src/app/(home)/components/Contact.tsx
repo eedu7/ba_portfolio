@@ -12,7 +12,7 @@ const Contact = () => {
                 <div className="flex flex-col md:flex-row w-full justify-center items-center gap-12 md:gap-4">
                     <div className="flex flex-col items-center gap-4">
                         <a href="https://www.youtube.com">
-                            <RiLinkedinBoxFill className="size-10 cursor-pointer"/>
+                            <RiLinkedinBoxFill className="size-10 cursor-pointer text-[#0077B5]"/>
                         </a>
                         <a href="/public" className="underline text-[12px] cursor-pointer font-bird_eye ">/in/bisal_ahmad</a>
                     </div>
