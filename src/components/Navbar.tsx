@@ -44,7 +44,7 @@ const NavbarList: React.FC = () => {
     } else {
         return (<Drawer direction="top">
             <DrawerTrigger>
-                <MenuIcon className="text-slate-400"/>
+                <MenuIcon className="text-white"/>
             </DrawerTrigger>
             <DrawerContent>
                 <DrawerHeader>
